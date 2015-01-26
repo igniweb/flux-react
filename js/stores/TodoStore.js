@@ -70,7 +70,7 @@ var TodoStore = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function (action) {
-    
+
     var text;
 
     switch (action.actionType) {
@@ -97,7 +97,7 @@ AppDispatcher.register(function (action) {
             TodoStore.emitChange();
             break;
 
-            case TodoConstants.TODO_COMPLETE:
+        case TodoConstants.TODO_COMPLETE:
             update(action.id, { complete: true });
             TodoStore.emitChange();
             break;
