@@ -1,13 +1,13 @@
 var React = require('react');
-var TodosStore = require('../stores/TodosStore');
+var TodoStore = require('../stores/TodoStore');
 var Header = require('./Header.react');
+var Footer = require('./Footer.react');
 var MainSection = require('./MainSection.react');
-var MainSection = require('./Footer.react');
 
 function getTodoState() {
     return {
-        allTodos: TodosStore.getAll(),
-        areAllComplete: TodosStore.areAllComplete()
+        allTodos: TodoStore.getAll(),
+        areAllComplete: TodoStore.areAllComplete()
     };
 }
 
@@ -18,11 +18,11 @@ var TodoApp = React.createClass({
     },
 
     componentDidMount: function () {
-        TodosStore.addChangeListener(this._onChange);
+        TodoStore.addChangeListener(this._onChange);
     },
 
     componentWillUnmount: function () {
-        TodosStore.removeChangeListener(this._onChange);
+        TodoStore.removeChangeListener(this._onChange);
     },
 
     render: function () {
